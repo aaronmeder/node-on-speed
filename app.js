@@ -3,11 +3,9 @@ const express = require('express');
 const speedTest = require('speedtest-net');
 const sqlite3 = require('sqlite3').verbose();
 
-const test = speedTest({
-  maxTime: 90000,
-});
-
 const app = express();
+
+console.log('/// Speedtest Script started ///');
 
 // schedule tasks to be run on the server
 cron.schedule('*/5 * * * *', function() {
@@ -16,9 +14,14 @@ cron.schedule('*/5 * * * *', function() {
   // check speed
   // -------------
 
+  const test = speedTest({
+    maxTime: 45000,
+  });
+
   // speedtest successful
   test.on('data', data => {
     // save result to db
+    console.log('Data received in time. Saving to db...');
 
     // connect to db
     const db = new sqlite3.Database(
