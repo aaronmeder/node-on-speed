@@ -1,2 +1,17 @@
+# Node modules
 node_modules
-/data/speedtests.db
+package-lock.json
+
+# Adonis directory for storing tmp files
+tmp
+
+# Environment variables, never commit this file
+.env
+
+# The sqlite dbs
+database/development.sqlite
+database/speedtests.sqlite
+
+# VSCode & Webstorm history directories
+.history
+.idea

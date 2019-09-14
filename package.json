@@ -1,15 +1,19 @@
 {
   "name": "node-on-speed",
   "version": "0.0.1",
+  "adonis-version": "4.1.0",
   "description": "Continuous internet speedtest running on node.js",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "node ace test",
+    "dev": "adonis serve --dev",
+    "scheduler": "node ace run:scheduler"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://aaronmeder@github.com/aaronmeder/node-on-speed.git"
-  },
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
   "author": "Aaron Meder, public.aaron@gmail.com",
   "license": "MIT",
   "bugs": {
@@ -17,24 +21,22 @@
   },
   "homepage": "https://github.com/aaronmeder/node-on-speed#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "node-cron": "^2.0.3",
+    "@adonisjs/ace": "^5.0.8",
+    "@adonisjs/auth": "^3.0.7",
+    "@adonisjs/bodyparser": "^2.0.5",
+    "@adonisjs/cors": "^1.0.7",
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/framework": "^5.0.9",
+    "@adonisjs/ignitor": "^2.0.8",
+    "@adonisjs/lucid": "^6.1.3",
+    "@adonisjs/session": "^1.0.27",
+    "@adonisjs/shield": "^1.0.8",
+    "adonis-scheduler": "^3.0.2",
     "speedtest-net": "^1.5.1",
     "sqlite3": "^4.1.0"
   },
-  "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-config-wesbos": "0.0.19",
-    "eslint-plugin-html": "^5.0.5",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.18.2"
+  "devDependencies": {},
+  "autoload": {
+    "App": "./app"
   }
 }
