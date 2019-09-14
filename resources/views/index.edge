@@ -13,19 +13,31 @@
     
     <table class="speedtests__table">
 
-      <tr class="speedtests__headers">
-        <th>Date</th>
-        <th>Download</th>
-        <th>Upload</th>
-      </tr>
-
-      @each(speedtest in speedtests)
-        <tr class="speedtest">
-          <td>{{ speedtest.created_at }}</td>
-          <td>{{ speedtest.download }}</td>
-          <td>{{ speedtest.upload }}</td>
+      <thead class="speedtests__header">
+        <tr>
+          <th>Date</th>
+          <th>Download</th>
+          <th>Upload</th>
         </tr>
-      @endeach
+      </thead>
+
+      <tbody>
+        @each(speedtest in speedtests)
+          <tr class="speedtest">
+            <td>{{ speedtest.created_at }}</td>
+            <td>{{ speedtest.download / 125000 }} Mbps</td>
+            <td>{{ speedtest.upload / 125000 }} Mbps</td>
+          </tr>
+        @endeach
+      </tbody>
+
+      <tfoot class="speedtests__footer">
+        <tr>
+          <td>Average</td>
+          <td>{{ averageDownload / 125000 }} Mbps</td>
+          <td>{{ averageUpload / 125000 }} Mbps</td>
+        </tr>
+      </tfoot>
 
     </table> 
 
