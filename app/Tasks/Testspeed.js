@@ -11,7 +11,11 @@ class Testspeed extends Task {
   }
 
   async handle () {
-    console.log('-- checking speed ----');
+    const moment = new Date();
+    const niceMoment = `${ moment.getFullYear() }-${ moment.getMonth() }-${ moment.getDate() } ${ moment.getHours() }:${ moment.getMinutes() }`
+
+    console.log('-- Checking speed ----');
+    console.log(`Start: ${ niceMoment }`);
 
     // check speed
     // -------------
