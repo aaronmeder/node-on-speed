@@ -16,7 +16,11 @@
     "url": "https://github.com/aaronmeder/node-on-speed/issues"
   },
   "homepage": "https://github.com/aaronmeder/node-on-speed#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "node-cron": "^2.0.3"
+  },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^5.16.0",
