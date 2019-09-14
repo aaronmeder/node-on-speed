@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Speedtests</title>
+  {{ style('style') }}
+</head>
+
+<body>
+  <h1>Your Speedtests</h1>
+  <section class="speedtests__list">
+    
+    <table class="speedtests__table">
+
+      <tr class="speedtests__headers">
+        <th>Date</th>
+        <th>Download</th>
+        <th>Upload</th>
+      </tr>
+
+      @each(speedtest in speedtests)
+        <tr class="speedtest">
+          <td>{{ speedtest.created_at }}</td>
+          <td>{{ speedtest.download }}</td>
+          <td>{{ speedtest.upload }}</td>
+        </tr>
+      @endeach
+
+    </table> 
+
+  </section>
+</body>
+
+</html>
