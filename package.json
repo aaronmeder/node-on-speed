@@ -20,7 +20,8 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "node-cron": "^2.0.3",
-    "speedtest-net": "^1.5.1"
+    "speedtest-net": "^1.5.1",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
