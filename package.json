@@ -8,7 +8,8 @@
     "start": "node server.js",
     "test": "node ace test",
     "dev": "adonis serve --dev",
-    "scheduler": "node ace run:scheduler"
+    "scheduler": "node ace run:scheduler",
+    "forever": "forever start server.js && forever start ace run:scheduler"
   },
   "keywords": [
     "adonisjs",

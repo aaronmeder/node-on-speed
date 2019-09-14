@@ -23,10 +23,9 @@ class Testspeed extends Task {
     // speedTestTool successful
     test.on('data', data => {
 
-      console.log(`Results: Down: ${data.speeds.download}, Up: ${data.speeds.upload}`);
+      console.log(`Result --> Down: ${data.speeds.download}, Up: ${data.speeds.upload}`);
 
       // save result to DB
-      console.log('Saving result...');
       const newTest = new Speedtest();
       newTest.download = data.speeds.originalDownload;
       newTest.upload = data.speeds.originalUpload;
