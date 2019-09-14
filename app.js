@@ -10,7 +10,7 @@ const test = speedTest({
 const app = express();
 
 // schedule tasks to be run on the server
-cron.schedule('* * * * *', function() {
+cron.schedule('*/5 * * * *', function() {
   console.log('-- checking speed ----');
 
   // check speed
@@ -23,23 +23,12 @@ cron.schedule('* * * * *', function() {
     // connect to db
     const db = new sqlite3.Database(
       './data/speedtests.db',
-      // eslint-disable-next-line no-bitwise
-      sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
+      sqlite3.OPEN_READWRITE,
       err => {
         if (err) {
           console.error(err.message);
         }
         console.log('Connected to the database.');
-      }
-    );
-
-    // create table
-    db.run(
-      'CREATE TABLE results(datetime TEXT, download NUMBER, upload NUMBER )',
-      function(err) {
-        if (err) {
-          return console.log(err.message);
-        }
       }
     );
 
