@@ -8,40 +8,52 @@
 </head>
 
 <body>
-  <h1>Your Speedtests</h1>
-  <section class="speedtests__list">
-    
-    <table class="speedtests__table">
+  
+  <header>
+    <h1>Your Measurements ⚡</h1>
+    <h2> 
+      <strong>Download</strong> {{ averageDownload }} Mbps
+      <strong>Upload</strong> {{ averageUpload }} Mbps
+    </h2>
+  </header>
 
-      <thead class="speedtests__header">
-        <tr>
-          <th>Date</th>
-          <th>Download</th>
-          <th>Upload</th>
-        </tr>
-      </thead>
+  <main>
 
-      <tbody>
-        @each(speedtest in speedtests)
-          <tr class="speedtest">
-            <td>{{ speedtest.created_at }}</td>
-            <td>{{ speedtest.download / 125000 }} Mbps</td>
-            <td>{{ speedtest.upload / 125000 }} Mbps</td>
+    <section class="speedtests__list">
+      
+      <table class="speedtests__table">
+
+        <thead class="speedtests__header">
+          <tr>
+            <th>Date</th>
+            <th>Download</th>
+            <th>Upload</th>
           </tr>
-        @endeach
-      </tbody>
+        </thead>
 
-      <tfoot class="speedtests__footer">
-        <tr>
-          <td>Average</td>
-          <td>{{ averageDownload / 125000 }} Mbps</td>
-          <td>{{ averageUpload / 125000 }} Mbps</td>
-        </tr>
-      </tfoot>
+        <tbody>
+          @each(speedtest in speedtests)
+            <tr class="speedtest">
+              <td>{{ speedtest.created_at }}</td>
+              <td>{{ speedtest.download / 125000 }} Mbps</td>
+              <td>{{ speedtest.upload / 125000 }} Mbps</td>
+            </tr>
+          @endeach
+        </tbody>
 
-    </table> 
+        <tfoot class="speedtests__footer">
+          <tr>
+            <td>Total measurements</td>
+            <td class="speedtests__count" colspan="2">{{ testsCount }}</td>
+          </tr>
+        </tfoot>
 
-  </section>
+      </table> 
+
+    </section>
+
+  </main>
+
 </body>
 
 </html>

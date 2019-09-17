@@ -1,17 +1,35 @@
-body {
-  margin: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
+/* resets */
 
 * {
   margin: 0;
   padding: 0;
 }
 
-h1 {
-  padding: 5px 10px;
+/* basics */
+
+body {
+  margin: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+/* page elements */
+
+header {
+  margin-bottom: 20px;
+}
+
+/* headings */
+
+h1 {
+  padding: 5px 0;
+}
+
+h2{
+  font-weight: normal;
+}
+
+/* tables */
 
 th {
   text-align: left;
@@ -21,3 +39,9 @@ th,
 td {
   padding: 5px 10px;
 }
+
+
+.speedtests__count {
+  text-align: right;
+}
+

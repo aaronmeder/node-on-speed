@@ -21,13 +21,15 @@ class SpeedtestController {
    */
   async index ({ request, response, view }) {
     const speedtests = await Speedtest.query().orderBy('created_at', 'desc').fetch();
-    const averageDownload = await Speedtest.query().avg('download');
-    const averageUpload = await Speedtest.query().avg('upload');
+    const averageDownload = await Speedtest.query().avg('download as rate');
+    const averageUpload = await Speedtest.query().avg('upload as rate');
+    const testsCount = await Speedtest.query().count();
 
     return view.render('index', {
       speedtests: speedtests.toJSON(), 
-      averageDownload: averageDownload,
-      averageUpload: averageUpload
+      averageDownload: (averageDownload[0].rate / 125000).toFixed(2),
+      averageUpload: (averageUpload[0].rate / 125000).toFixed(2),
+      testsCount: testsCount[0]['count(*)']
     });
   }
 
