@@ -17,10 +17,10 @@ Does a speedtest every thirty minutes and saves the result to database.
 ## Setup project
 
 1. Install Adonis globally using `npm i -g @adonisjs/cli`
-1. Install needed project dependencies using `npm install`
-2. Copy `.env.example` to `.env` and edit sample values to your environment.
-3. Run migration to create the database: `adonis migration:run`
-4. Install forever to run processes in background: `npm install -g forever`
+2. Install needed project dependencies using `npm install`
+3. Copy `.env.example` to `.env` and edit sample values to your environment.
+4. Run migration to create the database: `adonis migration:run`
+5. Install forever to run processes in background: `npm install -g forever`
 
 ## Dev Usage
 
